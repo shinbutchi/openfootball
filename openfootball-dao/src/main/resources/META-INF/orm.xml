@@ -1,0 +1,1362 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.shin.spring.openfootball.dao.entity.AlltimeStandingEntries" table="alltime_standing_entries"
+           schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="alltimeStandingId">
+            <column name="alltime_standing_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer"/>
+        </property>
+        <property name="played">
+            <column name="played" sql-type="integer"/>
+        </property>
+        <property name="won">
+            <column name="won" sql-type="integer"/>
+        </property>
+        <property name="lost">
+            <column name="lost" sql-type="integer"/>
+        </property>
+        <property name="drawn">
+            <column name="drawn" sql-type="integer"/>
+        </property>
+        <property name="goalsFor">
+            <column name="goals_for" sql-type="integer"/>
+        </property>
+        <property name="goalsAgainst">
+            <column name="goals_against" sql-type="integer"/>
+        </property>
+        <property name="pts">
+            <column name="pts" sql-type="integer"/>
+        </property>
+        <property name="recs">
+            <column name="recs" sql-type="integer"/>
+        </property>
+        <property name="comments">
+            <column name="comments" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.AlltimeStandings" table="alltime_standings" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Assocs" table="assocs" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="since">
+            <column name="since" sql-type="integer"/>
+        </property>
+        <property name="web">
+            <column name="web" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer"/>
+        </property>
+        <property name="national">
+            <column name="national" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="continental">
+            <column name="continental" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="intercontinental">
+            <column name="intercontinental" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.AssocsAssocs" table="assocs_assocs" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="assoc1Id">
+            <column name="assoc1_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="assoc2Id">
+            <column name="assoc2_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Badges" table="badges" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="leagueId">
+            <column name="league_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="seasonId">
+            <column name="season_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Cities" table="cities" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="stateId">
+            <column name="state_id" sql-type="integer"/>
+        </property>
+        <property name="partId">
+            <column name="part_id" sql-type="integer"/>
+        </property>
+        <property name="countyId">
+            <column name="county_id" sql-type="integer"/>
+        </property>
+        <property name="muniId">
+            <column name="muni_id" sql-type="integer"/>
+        </property>
+        <property name="metroId">
+            <column name="metro_id" sql-type="integer"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Continents" table="continents" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="slug">
+            <column name="slug" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Counties" table="counties" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="abbr">
+            <column name="abbr" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="iso">
+            <column name="iso" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="nuts">
+            <column name="nuts" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="stateId">
+            <column name="state_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="partId">
+            <column name="part_id" sql-type="integer"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Countries" table="countries" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="slug">
+            <column name="slug" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="histNames">
+            <column name="hist_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="continentId">
+            <column name="continent_id" sql-type="integer"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer"/>
+        </property>
+        <property name="s">
+            <column name="s" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="c">
+            <column name="c" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="d">
+            <column name="d" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="m">
+            <column name="m" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="motor">
+            <column name="motor" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="alpha2">
+            <column name="alpha2" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="alpha3">
+            <column name="alpha3" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="num">
+            <column name="num" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="fifa">
+            <column name="fifa" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="ioc">
+            <column name="ioc" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="fips">
+            <column name="fips" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="net">
+            <column name="net" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="wikipedia">
+            <column name="wikipedia" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.CountryCodes" table="country_codes" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="kind">
+            <column name="kind" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Districts" table="districts" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="cityId">
+            <column name="city_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.EventStandingEntries" table="event_standing_entries"
+           schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="eventStandingId">
+            <column name="event_standing_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer"/>
+        </property>
+        <property name="played">
+            <column name="played" sql-type="integer"/>
+        </property>
+        <property name="won">
+            <column name="won" sql-type="integer"/>
+        </property>
+        <property name="lost">
+            <column name="lost" sql-type="integer"/>
+        </property>
+        <property name="drawn">
+            <column name="drawn" sql-type="integer"/>
+        </property>
+        <property name="goalsFor">
+            <column name="goals_for" sql-type="integer"/>
+        </property>
+        <property name="goalsAgainst">
+            <column name="goals_against" sql-type="integer"/>
+        </property>
+        <property name="pts">
+            <column name="pts" sql-type="integer"/>
+        </property>
+        <property name="comments">
+            <column name="comments" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.EventStandings" table="event_standings" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="eventId">
+            <column name="event_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Events" table="events" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="leagueId">
+            <column name="league_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="seasonId">
+            <column name="season_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="startAt">
+            <column name="start_at" sql-type="date" length="2000000000" not-null="true"/>
+        </property>
+        <property name="endAt">
+            <column name="end_at" sql-type="date" length="2000000000"/>
+        </property>
+        <property name="team3">
+            <column name="team3" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="sources">
+            <column name="sources" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="config">
+            <column name="config" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.EventsGrounds" table="events_grounds" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="eventId">
+            <column name="event_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="groundId">
+            <column name="ground_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.EventsTeams" table="events_teams" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="eventId">
+            <column name="event_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Games" table="games" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="roundId">
+            <column name="round_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="groupId">
+            <column name="group_id" sql-type="integer"/>
+        </property>
+        <property name="team1Id">
+            <column name="team1_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="team2Id">
+            <column name="team2_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="playAt">
+            <column name="play_at" sql-type="datetime" length="2000000000" not-null="true"/>
+        </property>
+        <property name="postponed">
+            <column name="postponed" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="playAtV2">
+            <column name="play_at_v2" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="playAtV3">
+            <column name="play_at_v3" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="groundId">
+            <column name="ground_id" sql-type="integer"/>
+        </property>
+        <property name="cityId">
+            <column name="city_id" sql-type="integer"/>
+        </property>
+        <property name="knockout">
+            <column name="knockout" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="home">
+            <column name="home" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="score1">
+            <column name="score1" sql-type="integer"/>
+        </property>
+        <property name="score2">
+            <column name="score2" sql-type="integer"/>
+        </property>
+        <property name="score1Et">
+            <column name="score1et" sql-type="integer"/>
+        </property>
+        <property name="score2Et">
+            <column name="score2et" sql-type="integer"/>
+        </property>
+        <property name="score1P">
+            <column name="score1p" sql-type="integer"/>
+        </property>
+        <property name="score2P">
+            <column name="score2p" sql-type="integer"/>
+        </property>
+        <property name="score1I">
+            <column name="score1i" sql-type="integer"/>
+        </property>
+        <property name="score2I">
+            <column name="score2i" sql-type="integer"/>
+        </property>
+        <property name="score1Ii">
+            <column name="score1ii" sql-type="integer"/>
+        </property>
+        <property name="score2Ii">
+            <column name="score2ii" sql-type="integer"/>
+        </property>
+        <property name="nextGameId">
+            <column name="next_game_id" sql-type="integer"/>
+        </property>
+        <property name="prevGameId">
+            <column name="prev_game_id" sql-type="integer"/>
+        </property>
+        <property name="winner">
+            <column name="winner" sql-type="integer"/>
+        </property>
+        <property name="winner90">
+            <column name="winner90" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Goals" table="goals" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="personId">
+            <column name="person_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="gameId">
+            <column name="game_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="minute">
+            <column name="minute" sql-type="integer"/>
+        </property>
+        <property name="offset">
+            <column name="offset" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="score1">
+            <column name="score1" sql-type="integer"/>
+        </property>
+        <property name="score2">
+            <column name="score2" sql-type="integer"/>
+        </property>
+        <property name="penalty">
+            <column name="penalty" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="owngoal">
+            <column name="owngoal" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Grounds" table="grounds" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="synonyms">
+            <column name="synonyms" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="cityId">
+            <column name="city_id" sql-type="integer"/>
+        </property>
+        <property name="since">
+            <column name="since" sql-type="integer"/>
+        </property>
+        <property name="capacity">
+            <column name="capacity" sql-type="integer"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.GroupStandingEntries" table="group_standing_entries"
+           schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="groupStandingId">
+            <column name="group_standing_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer"/>
+        </property>
+        <property name="played">
+            <column name="played" sql-type="integer"/>
+        </property>
+        <property name="won">
+            <column name="won" sql-type="integer"/>
+        </property>
+        <property name="lost">
+            <column name="lost" sql-type="integer"/>
+        </property>
+        <property name="drawn">
+            <column name="drawn" sql-type="integer"/>
+        </property>
+        <property name="goalsFor">
+            <column name="goals_for" sql-type="integer"/>
+        </property>
+        <property name="goalsAgainst">
+            <column name="goals_against" sql-type="integer"/>
+        </property>
+        <property name="pts">
+            <column name="pts" sql-type="integer"/>
+        </property>
+        <property name="comments">
+            <column name="comments" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.GroupStandings" table="group_standings" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="groupId">
+            <column name="group_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Groups" table="groups" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="eventId">
+            <column name="event_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.GroupsTeams" table="groups_teams" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="groupId">
+            <column name="group_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Langs" table="langs" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Leagues" table="leagues" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer"/>
+        </property>
+        <property name="club">
+            <column name="club" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Logs" table="logs" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="msg">
+            <column name="msg" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="app">
+            <column name="app" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="tag">
+            <column name="tag" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="pid">
+            <column name="pid" sql-type="integer"/>
+        </property>
+        <property name="tid">
+            <column name="tid" sql-type="integer(8)"/>
+        </property>
+        <property name="ts">
+            <column name="ts" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Metros" table="metros" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Munis" table="munis" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="abbr">
+            <column name="abbr" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="iso">
+            <column name="iso" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="nuts">
+            <column name="nuts" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="stateId">
+            <column name="state_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="countyId">
+            <column name="county_id" sql-type="integer"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Names" table="names" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="placeKind">
+            <column name="place_kind" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="lang">
+            <column name="lang" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Parts" table="parts" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="abbr">
+            <column name="abbr" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="iso">
+            <column name="iso" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="nuts">
+            <column name="nuts" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="stateId">
+            <column name="state_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Persons" table="persons" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="synonyms">
+            <column name="synonyms" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="bornAt">
+            <column name="born_at" sql-type="date" length="2000000000"/>
+        </property>
+        <property name="cityId">
+            <column name="city_id" sql-type="integer"/>
+        </property>
+        <property name="stateId">
+            <column name="state_id" sql-type="integer"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer"/>
+        </property>
+        <property name="nationalityId">
+            <column name="nationality_id" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Places" table="places" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="kind">
+            <column name="kind" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="lat">
+            <column name="lat" sql-type="float" precision="2000000000" scale="10"/>
+        </property>
+        <property name="lng">
+            <column name="lng" sql-type="float" precision="2000000000" scale="10"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Props" table="props" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="value">
+            <column name="value" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="kind">
+            <column name="kind" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Rosters" table="rosters" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="personId">
+            <column name="person_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="teamId">
+            <column name="team_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="eventId">
+            <column name="event_id" sql-type="integer"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Rounds" table="rounds" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="eventId">
+            <column name="event_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title2">
+            <column name="title2" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="pos">
+            <column name="pos" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="knockout">
+            <column name="knockout" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="startAt">
+            <column name="start_at" sql-type="date" length="2000000000" not-null="true"/>
+        </property>
+        <property name="endAt">
+            <column name="end_at" sql-type="date" length="2000000000"/>
+        </property>
+        <property name="auto">
+            <column name="auto" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Seasons" table="seasons" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.SqliteSequence" table="sqlite_sequence" schema="">
+        <property name="name">
+            <column name="name" sql-type="" length="2000000000"/>
+        </property>
+        <property name="seq">
+            <column name="seq" sql-type="" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.States" table="states" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="placeId">
+            <column name="place_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="abbr">
+            <column name="abbr" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="iso">
+            <column name="iso" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="nuts">
+            <column name="nuts" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="altNames">
+            <column name="alt_names" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="pop">
+            <column name="pop" sql-type="integer"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Taggings" table="taggings" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="tagId">
+            <column name="tag_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="taggableId">
+            <column name="taggable_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="taggableType">
+            <column name="taggable_type" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Tags" table="tags" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="slug">
+            <column name="slug" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="grade">
+            <column name="grade" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="parentId">
+            <column name="parent_id" sql-type="integer"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Teams" table="teams" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="key" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar" length="2000000000" not-null="true"/>
+        </property>
+        <property name="title2">
+            <column name="title2" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="code">
+            <column name="code" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="synonyms">
+            <column name="synonyms" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="cityId">
+            <column name="city_id" sql-type="integer"/>
+        </property>
+        <property name="club">
+            <column name="club" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="since">
+            <column name="since" sql-type="integer"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="web">
+            <column name="web" sql-type="varchar" length="2000000000"/>
+        </property>
+        <property name="assocId">
+            <column name="assoc_id" sql-type="integer"/>
+        </property>
+        <property name="national">
+            <column name="national" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Usages" table="usages" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+        <property name="countryId">
+            <column name="country_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="langId">
+            <column name="lang_id" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="official">
+            <column name="official" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="minor">
+            <column name="minor" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="percent">
+            <column name="percent" sql-type="float" precision="2000000000" scale="10"/>
+        </property>
+        <property name="createdAt">
+            <column name="created_at" sql-type="datetime" length="2000000000"/>
+        </property>
+        <property name="updatedAt">
+            <column name="updated_at" sql-type="datetime" length="2000000000"/>
+        </property>
+    </class>
+    <class name="com.shin.spring.openfootball.dao.entity.Zones" table="zones" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true"/>
+        </id>
+    </class>
+</hibernate-mapping>
