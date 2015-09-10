@@ -39,6 +39,12 @@
             <version>${spring.core.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.shin.spring</groupId>
+            <artifactId>openfootball-dao</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
         <!-- jackson -->
         <!--<dependency>-->
             <!--<groupId>com.fasterxml.jackson.core</groupId>-->
