@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class HomeController {
-    @RequestMapping(value = "/ping", method = RequestMethod.GET)
+    @RequestMapping(value = "/ping", method = RequestMethod.POST)
     @ResponseBody
     public String ping() {
         return "pong";

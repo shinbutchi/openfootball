@@ -1177,14 +1177,6 @@
             <column name="updated_at" sql-type="datetime" length="2000000000"/>
         </property>
     </class>
-    <class name="com.shin.spring.openfootball.dao.entity.SqliteSequence" table="sqlite_sequence" schema="">
-        <property name="name">
-            <column name="name" sql-type="" length="2000000000"/>
-        </property>
-        <property name="seq">
-            <column name="seq" sql-type="" length="2000000000"/>
-        </property>
-    </class>
     <class name="com.shin.spring.openfootball.dao.entity.States" table="states" schema="">
         <id name="id">
             <column name="id" sql-type="integer" not-null="true"/>
