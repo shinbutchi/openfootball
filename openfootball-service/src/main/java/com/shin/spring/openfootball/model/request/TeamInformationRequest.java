@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class TeamInformationRequest implements Serializable {
     private static final long serialVersionUID = -6259802567768970502L;
-    private String teamId;
+    private int teamId;
 
-    public String getTeamId() {
+    public int getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(String teamId) {
+    public void setTeamId(int teamId) {
         this.teamId = teamId;
     }
 }

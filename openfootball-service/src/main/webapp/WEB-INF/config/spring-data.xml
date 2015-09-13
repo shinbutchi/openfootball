@@ -22,5 +22,6 @@
     </bean>
 
     <jpa:repositories base-package="com.shin.spring.openfootball.dao.repository" entity-manager-factory-ref="entityManagerFactory"
-                      transaction-manager-ref="transactionManager"/>
+                      transaction-manager-ref="transactionManager" />
+
 </beans>

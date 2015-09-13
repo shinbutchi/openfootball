@@ -15,4 +15,5 @@
     </bean>
 
     <import resource="config/spring-data.xml" />
+    <import resource="classpath:spring-integration/http-inbound-config.xml" />
 </beans>

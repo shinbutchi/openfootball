@@ -18,7 +18,7 @@ public class TeamServiceImpl implements TeamService {
     @Autowired
     TeamRepository teamRepository;
 
-    public TeamInformationResponse getClubInformation(String teamId) {
+    public TeamInformationResponse getClubInformation(int teamId) {
         Teams team = teamRepository.findFirstById(teamId);
         TeamInformation teamInformation = createTeamInformation(team);
         return new TeamInformationResponse(teamInformation);
@@ -27,6 +27,11 @@ public class TeamServiceImpl implements TeamService {
     private TeamInformation createTeamInformation(Teams team) {
         TeamInformation teamInformation = new TeamInformation();
         teamInformation.setTitle(team.getTitle());
+        teamInformation.setKey(team.getKey());
+        teamInformation.setAssocId(team.getAssocId());
+        teamInformation.setNational(team.getNational());
+        teamInformation.setClub(team.getClub());
+        teamInformation.setCountryId(team.getCountryId());
         return teamInformation;
 
     }
