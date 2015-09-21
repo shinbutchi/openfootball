@@ -6,25 +6,25 @@
         xmlns:int-http="http://www.springframework.org/schema/integration/http"
         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 
-		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.1.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.0.xsd
 		http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http-4.1.xsd">
 
-        <int:channel id="get-team-information-client-input-channel" />
+        <int:channel id="get-all-teams-of-country-client-input-channel" />
 
         <int-http:inbound-gateway
-                id="get-team-information" path="/team/get-infor"
-                request-channel="get-team-information-client-input-channel"
+                id="get-all-teams-of-league" path="/team/get-all-teams-of-country"
+                request-channel="get-all-teams-of-country-client-input-channel"
                 mapped-request-headers="*" supported-methods="POST"
-                request-payload-type="com.shin.spring.openfootball.model.request.GetTeamInformationRequest"
+                request-payload-type="com.shin.spring.openfootball.model.request.GetAllTeamsOfCountryRequest"
                 reply-channel="client-output-channel">
                 <int-http:request-mapping consumes="application/json" />
         </int-http:inbound-gateway>
 
 
         <int:service-activator
-                id="get-team-information-service"
-                input-channel="get-team-information-client-input-channel"
+                id="get-all-teams-of-league-service"
+                input-channel="get-all-teams-of-country-client-input-channel"
                 output-channel="client-output-channel"
-                ref="teamManagementActivator" method="getTeamInformation"/>
+                ref="teamManagementActivator" method="getAllTeamsOfCountry"/>
 
 </beans>

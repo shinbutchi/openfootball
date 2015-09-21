@@ -11,9 +11,7 @@ public class TeamInformation implements Serializable {
     String title;
     String key;
     int countryId;
-    int club;
     private Integer assocId;
-    private int national;
 
     public String getTitle() {
         return title;
@@ -39,14 +37,6 @@ public class TeamInformation implements Serializable {
         this.countryId = countryId;
     }
 
-    public int getClub() {
-        return club;
-    }
-
-    public void setClub(int club) {
-        this.club = club;
-    }
-
     public Integer getAssocId() {
         return assocId;
     }
@@ -55,11 +45,4 @@ public class TeamInformation implements Serializable {
         this.assocId = assocId;
     }
 
-    public int getNational() {
-        return national;
-    }
-
-    public void setNational(int national) {
-        this.national = national;
-    }
 }

@@ -6,10 +6,16 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by shin on 9/11/2015.
  */
 @Repository
 public interface TeamRepository extends JpaRepository<Teams, Integer> {
     Teams findFirstById(int teamId);
+
+    List<Teams> findByAssocId(int assocId);
+
+    List<Teams> findByCountryIdAndClub(int countryId, String club);
 }
